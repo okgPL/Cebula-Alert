@@ -8,6 +8,6 @@ public class PowerOff : MonoBehaviour
 	public void OnMouseDown()
 	{
 		Debug.Log ("Shutting down");
-		Application.Quit (); //DON'T try in editor!! Crashes Unity!
+		Application.Quit ();
 	}
 }

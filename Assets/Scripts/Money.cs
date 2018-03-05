@@ -28,7 +28,7 @@ public class Money : MonoBehaviour
 	public void Add(double value)
 	{
 		moneyBalance += value;
-		Debug.Log ("Added " + value + "to balance");
+		Debug.Log ("Added " + value + "to money balance");
 	}
 
 	/// <summary>
