@@ -26,9 +26,9 @@ public class Product : MonoBehaviour
 	{
 		isBuying = GameObject.Find ("MoneyBalance").GetComponent <Money> ().BuyMode;
 		if (isBuying)
-			PriceHolder.GetComponent<TMPro.TextMeshPro> ().text = buyPrice.ToString ();
+			PriceHolder.GetComponent<TMPro.TextMeshPro> ().text = string.Format("{0:F2}", buyPrice);
 		else
-			PriceHolder.GetComponent<TMPro.TextMeshPro> ().text = sellPrice.ToString ();
+			PriceHolder.GetComponent<TMPro.TextMeshPro> ().text = string.Format("{0:F2}", sellPrice);
 	}
 
 	public void onMouseDown ()
