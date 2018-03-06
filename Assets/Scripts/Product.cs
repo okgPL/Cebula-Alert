@@ -5,44 +5,48 @@
 /// </summary>
 public class Product : MonoBehaviour
 {
-	public double buyPrice, sellPrice;
-	public string productName;
-	public uint amount; //for future, will be used by inventory
-	public GameObject PriceHolder; //object which shows a price
-	public bool isBuying; //player will buy item if it's true and sell if it's false
+    public double buyPrice, sellPrice;
+    public string productName;
+    public uint amount; //for future, will be used by inventory
+    public GameObject PriceHolder; //object which shows a price
+    public bool isBuying; //player will buy item if it's true and sell if it's false
 
-	Product (string name = "AAA", uint amt = 1)
-	{
-		productName = name;
-		amount = amt;
-	}
+    Product(string name = "AAA", uint amt = 1)
+    {
+        productName = name;
+        amount = amt;
+    }
 
 
 
-	/// <summary>
-	/// Update this instance.
-	/// </summary>
-	void Update ()
-	{
-		isBuying = GameObject.Find ("MoneyBalance").GetComponent <Money> ().BuyMode;
-		if (isBuying)
-			PriceHolder.GetComponent<TMPro.TextMeshPro> ().text = string.Format("{0:F2}", buyPrice);
-		else
-			PriceHolder.GetComponent<TMPro.TextMeshPro> ().text = string.Format("{0:F2}", sellPrice);
-	}
+    /// <summary>
+    /// Update this instance.
+    /// </summary>
+    void Update()
+    {
+        isBuying = GameObject.Find("MoneyBalance").GetComponent<Money>().BuyMode;
+        if (isBuying)
+            PriceHolder.GetComponent<TMPro.TextMeshPro>().text = string.Format("{0:F2}", buyPrice);
+        else
+            PriceHolder.GetComponent<TMPro.TextMeshPro>().text = string.Format("{0:F2}", sellPrice);
+    }
 
-	public void onMouseDown ()
-	{
-		if (isBuying) {
-			if (GameObject.Find ("MoneyBalance").GetComponent <Money> ().Subtract (buyPrice) != 1) {
-				//GameObject.Find ("Inventory").GetComponent <Inventory> ().Add (gameObject.AddComponent( Product (productName, 1) != 1));
-				Debug.Log("Item " + productName + " bought");
-			}
-		} else {
-			//if (GameObject.Find ("Inventory").GetComponent <Inventory> ().Remove (gameObject.AddComponent( Product (productName, 1) != 1))) {
-				GameObject.Find ("MoneyBalance").GetComponent <Money> ().Add (sellPrice);
-				Debug.Log("Item " + productName +" sold");
-			//}
-		}
-	}
+    public void ButtonClick()
+    {
+        if (isBuying)
+        {
+            if (GameObject.Find("MoneyBalance").GetComponent<Money>().Subtract(buyPrice) != 1)
+            {
+                //GameObject.Find ("Inventory").GetComponent <Inventory> ().Add (gameObject.AddComponent( Product (productName, 1) != 1));
+                Debug.Log("Item " + productName + " bought");
+            }
+        }
+        else
+        {
+            //if (GameObject.Find ("Inventory").GetComponent <Inventory> ().Remove (gameObject.AddComponent( Product (productName, 1) != 1))) {
+            GameObject.Find("MoneyBalance").GetComponent<Money>().Add(sellPrice);
+            Debug.Log("Item " + productName + " sold");
+            //}
+        }
+    }
 }
