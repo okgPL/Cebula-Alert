@@ -12,7 +12,7 @@ public class Money : MonoBehaviour
 	/// <summary>
 	/// Money balance
 	/// </summary>
-	private double moneyBalance = 99.99;
+	private double moneyBalance = 1;
 	private string currencycode = "PLN";
 	public bool BuyMode = true;
 	/// <summary>
