@@ -301,12 +301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf28888524c04d48a06d712e1f92802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buyPrice: 0.99
-  sellPrice: 1.1
+  buyPrice: 0.5
+  sellPrice: 0.45
   productName: Onion
-  amount: 1
   PriceHolder: {fileID: 1471294790}
   isBuying: 1
+  saleDuration: 10
+  saleTrigger: 1
 --- !u!1 &299441530
 GameObject:
   m_ObjectHideFlags: 0
