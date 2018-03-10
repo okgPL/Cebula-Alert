@@ -301,14 +301,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf28888524c04d48a06d712e1f92802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  productID: 0
   buyPrice: 0.5
   sellPrice: 0.45
-  productName: Onion
-  PriceHolder: {fileID: 1471294790}
-  isBuying: 1
   saleDuration: 15
   saleTrigger: 3
+  productName: Onion
+  PriceHolder: {fileID: 1471294790}
   PriceBG: {fileID: 1034303333}
+  isBuying: 1
 --- !u!1 &299441530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,6 +3584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864216658}
   - component: {fileID: 1864216659}
+  - component: {fileID: 1864216660}
   m_Layer: 0
   m_Name: GameRules
   m_TagString: Untagged
@@ -3616,6 +3618,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paskiBuy: {fileID: 1693709974}
   paskiSell: {fileID: 13072782}
+--- !u!114 &1864216660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864216657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a146f0095bf4d3044bdd9b2af7ce9e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1888057209
 GameObject:
   m_ObjectHideFlags: 0

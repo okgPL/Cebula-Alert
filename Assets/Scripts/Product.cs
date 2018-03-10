@@ -6,15 +6,16 @@ using System;
 /// </summary>
 public class Product : MonoBehaviour
 {
+    public int productID; //for inventory proposes
     public double buyPrice, sellPrice;
+    public int saleDuration, saleTrigger;
     public string productName;
-    public GameObject PriceHolder; //object which shows a price
+
+    public GameObject PriceHolder, PriceBG;
     public bool isBuying; //player will buy item if it's true and sell if it's false
     private DateTime time;
-    public int saleDuration;
-    public int saleTrigger;
-    public GameObject PriceBG;
     private double sell;
+
     /// <summary>
     /// Update this instance.
     /// </summary>
@@ -43,12 +44,18 @@ public class Product : MonoBehaviour
         if (isBuying)
         {
             if (GameObject.Find("MoneyBalance").GetComponent<Money>().Subtract(buyPrice) != 1)
+            {
+                GameObject.Find("GameRules").GetComponent<Inventory>().AddItem(productID, 1);
                 Debug.Log("Item " + productName + " bought");
+            }
         }
         else
         {
-            GameObject.Find("MoneyBalance").GetComponent<Money>().Add(sell);
-            Debug.Log("Item " + productName + " sold");
+            if (GameObject.Find("GameRules").GetComponent<Inventory>().RemoveItem(productID, 1))
+            {
+                GameObject.Find("MoneyBalance").GetComponent<Money>().Add(sell);
+                Debug.Log("Item " + productName + " sold");
+            }
         }
     }
 }
