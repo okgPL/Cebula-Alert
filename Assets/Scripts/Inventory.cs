@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
@@ -18,5 +17,10 @@ public class Inventory : MonoBehaviour
             inventory[index] -= amount;
             return true;
         }
+    }
+
+    public int[] GetInventory()
+    {
+        return inventory;
     }
 }

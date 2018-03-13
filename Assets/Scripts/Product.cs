@@ -57,5 +57,6 @@ public class Product : MonoBehaviour
                 Debug.Log("Item " + productName + " sold");
             }
         }
+        GameObject.Find("GameRules").GetComponent<Saves>().SaveGame();
     }
 }

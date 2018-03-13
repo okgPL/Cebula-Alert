@@ -12,7 +12,7 @@ public class Money : MonoBehaviour
 	/// <summary>
 	/// Money balance
 	/// </summary>
-	private double moneyBalance = 1;
+	private double moneyBalance = 0;
 	private string currencycode = "PLN";
 	public bool BuyMode = true;
 	/// <summary>
@@ -47,4 +47,19 @@ public class Money : MonoBehaviour
         }
         else return 1;
 	}
+
+    public void SetCurrencyCode(string code)
+    {
+        currencycode = code;
+    }
+
+    public double GetBalance()
+    {
+        return moneyBalance;
+    }
+    
+    public string GetCurrencyCode()
+    {
+        return currencycode;
+    }
 }
