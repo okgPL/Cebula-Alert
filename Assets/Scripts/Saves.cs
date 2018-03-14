@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Saves : MonoBehaviour
 {
+    private string filename;
     private void Start()
     {
-        if (File.Exists("save.bin"))
+        filename = Application.persistentDataPath + "/save.bin";
+        if (File.Exists(filename))
         {
-            using (StreamReader sr = new StreamReader("save.bin"))
+            using (StreamReader sr = new StreamReader(filename))
             {
                 GameObject.Find("MoneyBalance").GetComponent<Money>().Add(Convert.ToDouble(sr.ReadLine()));
                 GameObject.Find("MoneyBalance").GetComponent<Money>().SetCurrencyCode(sr.ReadLine());
@@ -27,7 +29,7 @@ public class Saves : MonoBehaviour
 
     public void SaveGame()
     {
-        using (StreamWriter sw = new StreamWriter("save.bin"))
+        using (StreamWriter sw = new StreamWriter(filename))
         {
             sw.WriteLine(GameObject.Find("MoneyBalance").GetComponent<Money>().GetBalance());
             sw.WriteLine(GameObject.Find("MoneyBalance").GetComponent<Money>().GetCurrencyCode());
