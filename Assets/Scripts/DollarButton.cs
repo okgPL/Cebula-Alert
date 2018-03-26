@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DollarButton : MonoBehaviour {
-
-    public ParticleSystem DollarParticle;
-
-	public void JakiDebug()
+namespace CA
+{
+    public class DollarButton : MonoBehaviour
     {
-        Debug.Log("Dawaj kase biedaku");
-        DollarParticle.Emit(1);
+        public ParticleSystem DollarParticle;
+
+        public void JakiDebug()
+        {
+            Debug.Log("Dawaj kase biedaku");
+            DollarParticle.Emit(1);
+        }
     }
 }

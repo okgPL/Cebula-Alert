@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 
-public class PowerOff : MonoBehaviour 
+namespace CA
 {
-	public void OnMouseDown()
-	{
-		Debug.Log ("Shutting down");
-		Application.Quit ();
-	}
+    public class PowerOff : MonoBehaviour
+    {
+        public void OnMouseDown()
+        {
+            Debug.Log("Shutting down");
+            Application.Quit();
+        }
+    }
 }

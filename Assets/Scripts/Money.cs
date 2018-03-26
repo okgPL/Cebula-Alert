@@ -48,16 +48,28 @@ public class Money : MonoBehaviour
         else return 1;
 	}
 
+    /// <summary>
+    /// Sets the Currency Code
+    /// </summary>
+    /// <param name="code">currency code</param>
     public void SetCurrencyCode(string code)
     {
         currencycode = code;
     }
 
+    /// <summary>
+    /// Gets the money balance
+    /// </summary>
+    /// <returns>Money balance</returns>
     public double GetBalance()
     {
         return moneyBalance;
     }
     
+    /// <summary>
+    /// Gets the currency code
+    /// </summary>
+    /// <returns></returns>
     public string GetCurrencyCode()
     {
         return currencycode;
