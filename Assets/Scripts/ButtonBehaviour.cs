@@ -5,7 +5,7 @@ namespace CA
     public class ButtonBehaviour : MonoBehaviour
     {
         //public Button button;
-        public GameObject paskiBuy, paskiSell;
+        public GameObject paskiBuy, paskiSell, canvasMain, canvasInv, camMain, camInv;
 
         public void BuyClick()
         {
@@ -23,6 +23,22 @@ namespace CA
 
             Debug.Log("Gamemode set: Sell");
             GameObject.Find("MoneyBalance").GetComponent<Money>().BuyMode = false;
+        }
+
+        public void InvButton()
+        {
+            camMain.SetActive(false);
+            camInv.SetActive(true);
+            canvasMain.SetActive(false);
+            canvasInv.SetActive(true);
+        }
+
+        public void InvBack()
+        {
+            camMain.SetActive(true);
+            camInv.SetActive(false);
+            canvasMain.SetActive(true);
+            canvasInv.SetActive(false);
         }
     }
 }
