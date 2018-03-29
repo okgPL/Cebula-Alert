@@ -1,10 +1,35 @@
 ﻿using UnityEngine;
+using System;
 
 namespace CA
 {
     public class Inventory : MonoBehaviour
     {
         private int[] inventory = new int[2]; //Please remember to increment that while adding a new item to the game
+        public GameObject[] products;
+        public GameObject list, qty;
+
+        /// <summary>
+        /// Sets up the list in inventory
+        /// </summary>
+        private void Start()
+        {
+            string newlist = "";
+            foreach(GameObject x in products)
+              newlist +=  x.GetComponent<Product>().productName + "\n";
+            list.GetComponent<TMPro.TextMeshPro>().text = newlist;
+        }
+
+        /// <summary>
+        /// Updates the inventory list
+        /// </summary>
+        private void Update()
+        {
+            string newlist = "";
+            foreach (int x in inventory)
+                newlist += Convert.ToInt32(x) + "\n";
+            qty.GetComponent<TMPro.TextMeshPro>().text = newlist;
+        }
 
         /// <summary>
         /// Adds item to inventory
